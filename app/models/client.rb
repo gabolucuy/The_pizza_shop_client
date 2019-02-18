@@ -1,7 +1,7 @@
 class Client < ApplicationRecord
     require 'net/http'
 
-	def self.set_menu
+	def self.get_menu
 		#Other dishes menu
 		uri = URI('http://localhost:3000/other_dishes')
 		response =  Net::HTTP.get(uri) 
@@ -34,7 +34,7 @@ class Client < ApplicationRecord
 
 
     def self.client_iteration
-		# Client.set_menu
+		# Client.get_menu
 		while(true)
 			puts "hola"
 			sleep([*10..20].sample)
